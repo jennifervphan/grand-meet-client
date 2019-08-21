@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import AllPosts from './AllPosts';
-import {Route,Link} from 'react-router-dom';
-import EachPost from './EachPost';
+import {Link} from 'react-router-dom';
 
 export default class ShareCorner extends Component {
     render() {

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import AuthService from './auth-service';
 import { Link } from 'react-router-dom';
+import {geolocated} from 'react-geolocated';
 // import MainLayout from '../layout/MainLayout';
 
 class Signup extends Component {
@@ -14,6 +15,9 @@ class Signup extends Component {
   handleFormSubmit = (event) => {
     event.preventDefault();
     const form = new FormData(this.formRef.current)
+    form.append("longitude",this.props.coords.longitude)
+    form.append("latitude",this.props.coords.latitude)
+
     this.service.signup(form)
     .then(response => {
         this.setState({
@@ -23,7 +27,6 @@ class Signup extends Component {
 
         });
         this.props.history.push('/profile')
-        // this.props.getUser()
     })
     .catch( error => console.log(error) )
   }
@@ -45,7 +48,6 @@ class Signup extends Component {
             <Link to="/" style={{textDecoration:"none", color: "white"}}><h3>grandMeet</h3></Link>
             <Link to='/login' style={{ textDecoration: 'none', color:"white"}}><h3>Login</h3></Link>
         </nav>
-      {/* <MainLayout {...this.props}> */}
       <Link to="/" style={{ textDecoration: 'none', color:"white" }}><i className="fas fa-times-circle fa-2x"></i></Link>
         <div className="signupForm">
         <h3>Register</h3>
@@ -66,10 +68,14 @@ class Signup extends Component {
             <Link to={"/login"} style={{ color: 'rgb(5, 5, 5)', textDecoration:"underline" }}> Login</Link>
         </p>
         </div>
-      {/* </MainLayout> */}
       </div>
     )
   }
 }
 
-export default Signup;
+export default geolocated({
+  positionOptions: {
+    enableHighAccuracy: false,
+  },
+  userDecisionTimeout: 5000,
+})(Signup);

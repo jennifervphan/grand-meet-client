@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
+import {
+    formatWrittenAt
+  } from '../../method'; 
 
 export default class EachPost extends Component {
     constructor(props){
         super(props);
         this.state={};
-        // this.formatWrittenAt= this.formatWrittenAt.bind(this)
+        this.formatWrittenAt= formatWrittenAt.bind(this)
     }
 
     componentDidMount(){
@@ -26,35 +29,6 @@ export default class EachPost extends Component {
         .catch(err=>{
             console.log(err)
         })
-    }
-
-    formatWrittenAt = (writtenAt, now)=> {
-        if (writtenAt.getDate() === now.getDate() &&
-            writtenAt.getMonth() === now.getMonth() &&
-            writtenAt.getFullYear() === now.getFullYear()) {
-            return "at " + (writtenAt.getHours() < 10 ? "0" + writtenAt.getHours().toString() : writtenAt.getHours().toString()) + ":" +
-                (writtenAt.getMinutes() < 10 ? "0" + writtenAt.getMinutes().toString() : writtenAt.getMinutes().toString()) + ":" +
-                (writtenAt.getSeconds() < 10 ? "0" + writtenAt.getSeconds().toString() : writtenAt.getSeconds().toString());
-        } else if (writtenAt.getMonth() === now.getMonth() &&
-            writtenAt.getFullYear() === now.getFullYear() &&
-            writtenAt.getDate() === now.getDate() - 1) {
-            return "yesterday " + (writtenAt.getHours() < 10 ? "0" + writtenAt.getHours().toString() : writtenAt.getHours().toString()) + ":" +
-                (writtenAt.getMinutes() < 10 ? "0" + writtenAt.getMinutes().toString() : writtenAt.getMinutes().toString()) + ":" +
-                (writtenAt.getSeconds() < 10 ? "0" + writtenAt.getSeconds().toString() : writtenAt.getSeconds().toString());
-        } else if (writtenAt.getFullYear() === now.getFullYear()) {
-            return (writtenAt.getDate() < 10 ? "0" + writtenAt.getDate().toString() : writtenAt.getDate().toString()) + "." +
-                (writtenAt.getMonth() < 10 ? "0" + writtenAt.getMonth().toString() : writtenAt.getMonth().toString()) +
-                ". " + (writtenAt.getHours() < 10 ? "0" + writtenAt.getHours().toString() : writtenAt.getHours().toString()) + ":" +
-                (writtenAt.getMinutes() < 10 ? "0" + writtenAt.getMinutes().toString() : writtenAt.getMinutes().toString()) + ":" +
-                (writtenAt.getSeconds() < 10 ? "0" + writtenAt.getSeconds().toString() : writtenAt.getSeconds().toString());
-        } else {
-            return (writtenAt.getDate() < 10 ? "0" + writtenAt.getDate().toString() : writtenAt.getDate()) + "." +
-                (writtenAt.getMonth() < 10 ? "0" + writtenAt.getMonth().toString() : writtenAt.getMonth()) + "." +
-                writtenAt.getFullYear().toString() +
-                " " + (writtenAt.getHours() < 10 ? "0" + writtenAt.getHours().toString() : writtenAt.getHours()) + ":" +
-                (writtenAt.getMinutes() < 10 ? "0" + writtenAt.getMinutes().toString() : writtenAt.getMinutes()) + ":" +
-                (writtenAt.getSeconds() < 10 ? "0" + writtenAt.getSeconds().toString() : writtenAt.getSeconds());
-        }
     }
 
     render() {
