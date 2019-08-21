@@ -1,24 +1,79 @@
-.allPosts {
-    height: 100%;
-    padding: 20px;
-}
-
-.eachPost {
-    border-radius: 10px;
-    border: solid 1px black;
-    padding: 10px;
-    width: 30%;
-    margin: 10px;
-}
-
-.posts {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-}
-
-.postInput {
-    height: 100%;
-    padding: 20px;
-}
+    .allPosts {
+        height: 100%;
+        padding: 20px;
+    }
+    
+    .eachPost {
+        /* border-radius: 10px; */
+        /* border: solid 1px grey; */
+        background-color: rgb(230, 230, 230);
+        padding: 10px;
+        width: 30%;
+        height: 150px;
+        margin: 10px;
+        text-align: left;
+        /* display: flex;
+        flex-direction: column;
+        align-items: left;
+        justify-content: center; */
+        /* background-color: rgb(224, 224, 224); */
+    }
+    
+    .posts {
+        text-decoration: none;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .postInput {
+        height: 100%;
+        padding: 20px;
+    }
+    
+    .postInput input {
+        margin-bottom: 20px;
+        width: 50%;
+        height: 40px;
+        padding: 10px;
+    }
+    
+    .postDetails {
+        height: 100%;
+        width: 80%;
+        padding: 50px;
+        align-self: center;
+    }
+    
+    .eachLine {
+        text-align: left;
+    }
+    
+    .sharePic {
+        width: 50px;
+        height: 50px;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        background-position: center;
+    }
+    
+    @media only screen and (max-width: 600px) {
+        .eachPost {
+            width: 400px;
+        }
+        .postDetails {
+            width: 100%;
+            padding: 20px;
+            background-size: cover;
+            background-position: center;
+        }
+    }
+    
+    @media only screen and (min-width: 601px) and (max-width:960px) {
+        .eachPost {
+            width: 45%;
+        }
+    }

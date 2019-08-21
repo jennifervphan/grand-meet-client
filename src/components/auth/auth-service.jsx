@@ -53,6 +53,8 @@ class AuthService {
     return this.service.post('/logout', {})
     .then(() => {
       localStorage.removeItem('user');
+      localStorage.removeItem('nearbyUsers');
+
     })
   }
 }

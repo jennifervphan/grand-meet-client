@@ -42,7 +42,7 @@ export default class Profile extends Component {
                     <hr style={{width: "100%"}}/>
                     <p className="aboutSect">About: {this.state.loggedInUser.about} </p>
                     <Link to='/'>
-                    <button style={{margin: "20px 0"}} className="registerBtn" onClick={() => this.logoutUser()}>Logout</button>
+                    <button style={{margin: "20px 0"}} onClick={() => this.logoutUser()}>Logout</button>
                     </Link>
                 </div>
               </MainLayout>

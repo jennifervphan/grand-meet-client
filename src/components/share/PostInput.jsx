@@ -5,6 +5,7 @@ export default class PostInput extends Component {
     constructor(props){
         super(props);
         this.state={
+            title:'',
             text:'',
             user: JSON.parse(localStorage.getItem('user'))
         }
@@ -18,10 +19,10 @@ export default class PostInput extends Component {
     handleFormSubmit = (event) => {
         event.preventDefault();
         const text = this.state.text;
-
-        this.service.post('/post', {text})
+        const title = this.state.title;
+        this.service.post('/post', {text, title})
         .then(response=>{
-            this.props.history.push('/share/thoughtscorner')
+            this.props.history.push('/share/thoughtsCorner')
         })
         .catch(err =>{
             console.log(err)
@@ -37,8 +38,9 @@ export default class PostInput extends Component {
         return (
             <div className="postInput">
             <form onSubmit={this.handleFormSubmit}>
+                <input name="title" placeholder="title" value={this.state.title} onChange={this.handleChange} type="text"/>
                 <textarea className="form-control" name="text" cols="40" rows="5" placeholder="Share your thought..." value={this.state.text} onChange={this.handleChange}></textarea>
-                <button type="submit">Share</button>
+                <button style={{marginTop:"10px"}} type="submit">Share</button>
             </form>
             </div>
         )

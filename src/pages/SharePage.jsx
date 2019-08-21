@@ -5,6 +5,7 @@ import MainLayout from '../components/layout/MainLayout';
 import ShareCorner from '../components/share/ShareCorner';
 import "./SharePage.css"
 import PostInput from '../components/share/PostInput';
+import EachPost from '../components/share/EachPost';
 
 export default class SharePage extends Component {
     render() {
@@ -35,7 +36,9 @@ export default class SharePage extends Component {
                 
                 <Route path='/share/commonRoom' render = {(routeProps) => <CommonRoom {...routeProps}/>} />
                 <Route path='/share/shareYourThoughts' render = { (routeProps) => <PostInput {...routeProps}/>}/>
-                <Route path="/share/thoughtsCorner" render = { (routeProps) => <ShareCorner {...routeProps} />}/>
+                <Route exact path="/share/thoughtsCorner" render = { (routeProps) => <ShareCorner {...routeProps} />}/>
+                <Route path="/share/thoughtsCorner/:id" render = { (routeProps) => <EachPost {...routeProps}/>}/>
+
                 </div>
             </MainLayout>
         )

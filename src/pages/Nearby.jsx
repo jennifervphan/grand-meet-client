@@ -35,8 +35,9 @@ class Nearby extends Component {
         .then(responseFromApi => {
             if (this._isMounted) {
                 let users= this.calculateUserDist(responseFromApi.data);
-                    this.setState({sortedUsers:users})
-                    this.props.history.push('/nearby')
+                localStorage.setItem('nearbyUsers', JSON.stringify(users));
+                this.setState({sortedUsers:users});
+                this.props.history.push('/nearby');
         }
     })
     }
@@ -65,8 +66,7 @@ class Nearby extends Component {
         let eachUser=users.map(user=>{
             return(
                 // <div className="eachUser" key={user.username}>
-                    <Link style={{textDecoration:"none"}} to={{ pathname: `/nearby/${user._id}`,
-                                nearbyUserProps: {user: user}}}>
+                    <Link style={{textDecoration:"none"}} to={{ pathname: `/nearby/${user._id}`}}>
 
                         <div className="avaPic eachUser" style={{backgroundImage:`url(${user.profilePicUrl})` }}>
                             {/* <i className="fas fa-info-circle fa-2x"></i> */}
