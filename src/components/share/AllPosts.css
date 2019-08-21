@@ -1,0 +1,24 @@
+.allPosts {
+    height: 100%;
+    padding: 20px;
+}
+
+.eachPost {
+    border-radius: 10px;
+    border: solid 1px black;
+    padding: 10px;
+    width: 30%;
+    margin: 10px;
+}
+
+.posts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.postInput {
+    height: 100%;
+    padding: 20px;
+}

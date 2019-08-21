@@ -20,13 +20,13 @@ class Navbar extends Component {
     if(this.state.loggedInUser){
       return(
         <nav className="Navbar" style={{backgroundColor:"#334455", opacity:"0.7"}}>
-          <Link to="/" style={{textDecoration:"none", color: "white"}}><h3>grandMeet</h3></Link>
-          <div className="navItems">
+          {/* <Link to="/" style={{textDecoration:"none", color: "white"}}><h3>grandMeet</h3></Link> */}
+          {/* <div className="navItems"> */}
           <Link to="/profile" style={{ textDecoration: 'none', color: "white"}}><h4 className="navItem">Profile</h4></Link>
           <Link to="/nearby" style={{ textDecoration: 'none', color: "white"}}><h4 className="navItem">Nearby</h4></Link>
           <Link to="/share" style={{ textDecoration: 'none', color: "white"}} ><h4 className="navItem">Share</h4></Link>
           <Link to="/inbox" style={{ textDecoration: 'none', color: "white"}}><i className="navItem fas fa-comments fa-2x"></i></Link>
-          </div>
+          {/* </div> */}
         </nav>
       )
     } else {

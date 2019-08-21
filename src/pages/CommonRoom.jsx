@@ -1,9 +1,8 @@
 import React from 'react';
 import 'semantic-ui-css/semantic.min.css';
-import Login from '../components/share/Login';
-import Games from '../components/share/Games';
-import MainLayout from '../components/layout/MainLayout';
-import "../components/share/GameBoard.css";
+import Login from '../components/commonRoom/Login';
+import Games from '../components/commonRoom/Games';
+import "../components/commonRoom/GameBoard.css";
 
 class CommonRoom extends React.Component {
   constructor(props){

@@ -2,13 +2,16 @@ import React, { Component } from 'react';
 import {Link, Route} from 'react-router-dom';
 import CommonRoom from "./CommonRoom";
 import MainLayout from '../components/layout/MainLayout';
+import ShareCorner from '../components/share/ShareCorner';
+import "./SharePage.css"
+import PostInput from '../components/share/PostInput';
 
 export default class SharePage extends Component {
     render() {
         return (
             <MainLayout {...this.props}>
                 <div className="columnFlex" style={{width:"100%", height: "88vh", justifyContent:"space-between"}}>
-                <div style={{display:"flex"}}>
+                <div className="sharingTab">
                 <Link style={{textDecoration:"none", color: "black"}} to="/share/commonRoom">
                     <h4>Common Room</h4>
                     {/* <p>Sed eleifend id ipsum a aliquam. Donec ultrices sollicitudin ullamcorper. 
@@ -19,7 +22,7 @@ export default class SharePage extends Component {
                         Etiam mollis dui lacus, eget tincidunt ligula condimentum vitae. Aliquam eu tellus tellus.</p> */}
                 </Link>
 
-                <Link style={{textDecoration:"none", color: "black"}} to="/sharingThings">
+                <Link style={{textDecoration:"none", color: "black"}} to="/share/thoughtsCorner">
                     <h4>Sharing Corner</h4>
                     {/* <p>Sed eleifend id ipsum a aliquam. Donec ultrices sollicitudin ullamcorper. 
                         Donec porta est in nibh elementum congue. 
@@ -31,6 +34,8 @@ export default class SharePage extends Component {
                 </div>
                 
                 <Route path='/share/commonRoom' render = {(routeProps) => <CommonRoom {...routeProps}/>} />
+                <Route path='/share/shareYourThoughts' render = { (routeProps) => <PostInput {...routeProps}/>}/>
+                <Route path="/share/thoughtsCorner" render = { (routeProps) => <ShareCorner {...routeProps} />}/>
                 </div>
             </MainLayout>
         )

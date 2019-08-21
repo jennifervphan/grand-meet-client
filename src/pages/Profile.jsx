@@ -47,10 +47,12 @@ export default class Profile extends Component {
                 </div>
               </MainLayout>
             )
-          }
+          } else
           {
             return(
-              <MainLayout {...this.props}>Loading...</MainLayout>
+              <MainLayout {...this.props}>
+                Loading...
+              </MainLayout>
             )
           }         
     }
