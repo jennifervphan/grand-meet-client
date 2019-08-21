@@ -24,26 +24,51 @@ p {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    margin-bottom: 30px;
+    margin-bottom: 0;
     background-position: center;
 }
 
-.editIcon::before {
+.editIcon {
     position: absolute;
-    float: right;
+    display: inline-block;
+    width: 3em;
+    height: 3em;
     margin-left: 70px;
-    margin-top: -80px;
-    width: 40px;
-    height: 40px;
+    margin-top: -60px;
+    background-color: red;
+    text-align: center;
+    border-radius: 50%;
+}
+
+.fa-pen {
+    color: white;
+}
+
+.editIcon::before {
+    /* position: absolute;
+    margin-left: 70px;
+    margin-top: -50px;
+    width: 40px !important;
+    height: 40px !important;
     border-radius: 50%;
     background-color: red;
     font-family: "Font Awesome 5 Free";
     color: white;
     text-align: center !important;
+    vertical-align: middle;
     font-weight: 900;
     font-size: 25px;
     content: "\f304";
-    /*  */
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center; */
+    content: '';
+    display: inline-block;
+    height: 120%;
+    vertical-align: middle;
+    border-radius: 50%;
 }
 
 .registerBtn {

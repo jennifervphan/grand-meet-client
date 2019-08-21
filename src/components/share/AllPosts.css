@@ -27,6 +27,12 @@
         justify-content: flex-start;
         align-items: center;
         height: 40%;
+        width: 100%;
+    }
+    
+    .postTitle {
+        width: 310px;
+        margin-top: 0 !important;
     }
     
     .footerDiv {

@@ -1,5 +1,4 @@
 import React from 'react';
-    import { Segment, Button, Form } from 'semantic-ui-react';
     export default class Login extends React.Component {
         state = {
             username: ''

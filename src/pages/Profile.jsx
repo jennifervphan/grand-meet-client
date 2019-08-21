@@ -62,7 +62,7 @@ export default class Profile extends Component {
               <MainLayout {...this.props}>
                 <div className="ProfilePage">
                     <div className="profilePic" style={{  backgroundImage: `url(${this.state.user.profilePicUrl})`}}></div>
-                    <Link style={{ textDecoration:"none" }} to="/editProfile"><div className="editIcon"></div></Link>
+                    <Link style={{ textDecoration:"none" }} to="/editProfile"><div className="editIcon"><i class="fas fa-pen fa-2x"></i></div></Link>
                     <h3>{this.state.user.username}</h3>
                     <hr style={{width: "100%"}}/>
                     <p className="aboutSect">About: {this.state.user.about} </p>

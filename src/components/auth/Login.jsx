@@ -35,7 +35,7 @@ class Login extends Component {
       {/* <MainLayout {...this.props}> */}
       <nav className="Navbar">
             <Link to="/" style={{textDecoration:"none", color: "white"}}><h3>grandMeet</h3></Link>
-            <Link to='/login' style={{ textDecoration: 'none', color:"white"}}>Login</Link>
+            <Link to='/login' style={{ textDecoration: 'none', color:"white"}}><h3>Login</h3></Link>
       </nav>
       <Link to="/" style={{ textDecoration: 'none', color:"white" }}><i className="fas fa-times-circle fa-2x"></i></Link>
         <div className="loginForm">

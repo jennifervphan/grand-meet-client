@@ -10,9 +10,9 @@ export default class EachPostCard extends Component {
                         <div className="eachPost"  key={index}>
                             <div className="titleDiv">
                                 <div className="sharePic" style={{backgroundImage: `url(${post.author.profilePicUrl})`, marginRight:"10px"}}></div>
-                                <h4>{post.title}</h4>
+                                <h4 className="postTitle">{post.title}</h4>
                             </div>
-                            <p style={{margin:"0"}}>{post.short[0]}</p>
+                            <p style={{marginTop:"10px"}}>{post.short[0]}</p>
                             <p>{post.short[1]}</p>
                             <div className="footerDiv">
                                 <p><i class="far fa-clock"></i> {post.niceTime}</p>
@@ -29,10 +29,9 @@ export default class EachPostCard extends Component {
                         <div className="eachPost" key={index}>
                             <div className="titleDiv">
                                 <div className="sharePic" style={{backgroundImage: `url(${post.author.profilePicUrl})`, marginRight:"10px"}}></div>
-                                <h4>{post.title}</h4>
+                                <h4 className="postTitle">{post.title}</h4>
                             </div>
-                            <p style={{margin:"0"}}>{post.text[0]}</p>
-                            <p>...</p>
+                            <p style={{marginTop:"10px"}}>{post.text[0]} ...</p>
                             <div className="footerDiv">
                                 <p><i class="far fa-clock"></i> {post.niceTime}</p>
                                 <Link to={{
