@@ -1,0 +1,73 @@
+.message-submit {
+    width: 30%;
+    background-color: rgb(209, 207, 207);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+}
+
+.input-field {
+    /* position: absolute; */
+    bottom: 0;
+    width: 100%;
+    display: flex;
+}
+
+.message-input {
+    width: 70%;
+    height: 50px;
+    border: 0;
+    /* border-top: 1px solid rgb(156, 156, 156); */
+    font-size: 18px;
+    padding-left: 2px
+}
+
+.emoji-mart {
+    position: absolute;
+    bottom: 50px;
+    right: 10px;
+}
+
+input[type="text"].message-input,
+textarea.message-input {
+    height: 50px;
+    flex-grow: 1;
+    line-height: 35px;
+    padding-left: 20px;
+    border-radius: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border: none;
+    font-size: 16px;
+    color: #333;
+    min-height: auto;
+    overflow-y: hidden;
+    resize: none;
+    border: 1px solid rgb(209, 207, 207);
+}
+
+.message-input:focus {
+    outline: none;
+}
+
+.toggle-emoji {
+    border: none;
+    border-radius: 0 !important;
+    width: 50px;
+    height: auto;
+    padding: 0;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #534a3c;
+    border: 1px solid rgb(209, 207, 207);
+}
+
+.toggle-emoji svg {
+    width: 28px;
+    height: 28px;
+}

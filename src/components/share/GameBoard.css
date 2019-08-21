@@ -1,0 +1,165 @@
+.gamePage {
+    margin: 20px;
+    height: 76vh;
+    max-height: 76vh;
+}
+
+.rowFlex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.flexpart {
+    width: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: left;
+}
+
+.differentRooms {
+    width: 18%;
+    padding: 0 15px 0 0;
+    border-right: solid 1px rgb(165, 164, 164);
+}
+
+.chatArea {
+    width: 80%;
+    height: 100%;
+}
+
+.columnFlex {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px !important;
+}
+
+.allMessages {
+    padding: 0 20px;
+    width: 80%;
+    height: 76vh;
+    max-height: 76vh;
+    overflow-y: scroll;
+}
+
+.availableUsers {
+    width: 20%;
+    height: 76vh;
+    max-height: 76vh;
+    overflow-y: scroll;
+}
+
+.availableUsers li {
+    padding: 10px;
+}
+
+.colorofChess {
+    width: 20%;
+    margin-left: 150px;
+}
+
+.ui.form {
+    width: 100% !important;
+}
+
+.typeText {
+    width: 100% !important;
+}
+
+.loginToCommon {
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginToCommon input {
+    width: 250px;
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+.loginToCommonForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 350px;
+    height: 300px;
+    background-color: white;
+    opacity: 0.9;
+    color: rgb(22, 22, 22);
+    margin: 0 auto;
+    padding: 50px 0;
+    border-radius: 10px;
+}
+
+
+/* .ui.grid>[class*="two column"].row>.column {
+    width: 100% !important;
+}
+
+.ui.container {
+    width: 100%;
+    max-height: 100%;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.ui.list:last-child,
+ol.ui.list:last-child,
+ul.ui.list:last-child {
+    position: relative;
+    top: 80%;
+}
+
+.ui.grid {
+    height: 100vh;
+}
+
+.ui.grid>.row {
+    height: 88vh;
+    border-color: white !important;
+}
+
+.ui.grid>.column:not(.row),
+.ui.grid>.row>.column {
+    border-left: solid 1px grey;
+}
+
+.ui.grid>.column:not(.row),
+.ui.grid>.row>.column {
+    padding: 0 !important;
+}
+
+.ui.list>.item>.icon+.content,
+.ui.list>.item>.image+.content {
+    width: 90% !important;
+}
+
+.ui.column.grid>[class*="four wide"].column,
+.ui.grid>.column.row>[class*="four wide"].column,
+.ui.grid>.row>[class*="four wide"].column,
+.ui.grid>[class*="four wide"].column {
+    width: 22% !important;
+}
+
+.ui.list .list>.item [class*="right floated"],
+.ui.list>.item [class*="right floated"] {
+    /* margin-left: -10px !important; */
+
+
+/* float: none;
+    margin-left: 110px;
+}
+ */
+
+
+/* 
+.ui.relaxed.list:not(.horizontal)>.item:not(:last-child) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+} */

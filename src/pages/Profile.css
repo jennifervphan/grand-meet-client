@@ -1,0 +1,56 @@
+.ProfilePage {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 20px;
+    /* background-color: #fcf9f3; */
+    /* opacity: 0.8; */
+}
+
+.ProfilePage h3,
+p {
+    font-family: 'Rubik', sans-serif;
+    color: black !important;
+    /* margin: 0;
+    padding: 0; */
+}
+
+.profilePic {
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    margin-bottom: 30px;
+    background-position: center;
+}
+
+.editIcon::before {
+    position: absolute;
+    float: right;
+    margin-left: 70px;
+    margin-top: -80px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: red;
+    font-family: "Font Awesome 5 Free";
+    color: white;
+    text-align: center !important;
+    font-weight: 900;
+    font-size: 25px;
+    content: "\f304";
+    /*  */
+}
+
+.registerBtn {
+    font-size: 20px;
+}
+
+.aboutSect {
+    font-size: 18px;
+    width: 500px;
+}

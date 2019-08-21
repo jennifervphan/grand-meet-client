@@ -1,0 +1,13 @@
+.inboxPage {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.eachRoom {
+    width: 80%;
+}
+
+.input-field {
+    /* width: 80%; */
+}

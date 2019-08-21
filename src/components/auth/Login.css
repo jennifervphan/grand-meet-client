@@ -1,0 +1,100 @@
+.loginPage {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    background: url('/img/raymond-tan-yiY6CsbFXIE-unsplash.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-color: rgb(44, 5, 5);
+    opacity: 0.7;
+}
+
+.loginForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 350px;
+    height: 410px;
+    background-color: white;
+    opacity: 0.9;
+    color: rgb(22, 22, 22);
+    margin: 10px auto;
+    padding: 50px 0;
+    border-radius: 10px;
+}
+
+.loginForm p {
+    color: rgb(22, 22, 22);
+}
+
+.loginInput {
+    display: flex;
+    flex-direction: column;
+}
+
+.loginInput input {
+    width: 250px;
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+.loginInput button {
+    align-self: center;
+}
+
+.signupForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 350px;
+    height: 420px;
+    background-color: white;
+    opacity: 0.9;
+    color: rgb(22, 22, 22);
+    margin: 10px auto;
+    padding: 20px 0;
+    border-radius: 10px;
+}
+
+.fa-times-circle {
+    position: absolute;
+    float: right;
+    margin-left: 170px;
+    margin-top: -12px;
+}
+
+.submitBtn {
+    width: 150px;
+    border-radius: 30px;
+    background-color: rgb(22, 22, 22);
+    color: white;
+}
+
+.signupForm p {
+    color: rgb(22, 22, 22);
+}
+
+.loginForm a {
+    color: rgb(22, 22, 22);
+    text-decoration: underline;
+}
+
+.loginForm p {
+    color: rgb(22, 22, 22) !important;
+}
+
+.signupForm p {
+    color: rgb(22, 22, 22) !important;
+}
+
+.editPage input {
+    margin: 0 0 20px 0;
+}
+
+.editPage label {
+    margin: 0;
+}

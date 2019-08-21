@@ -1,0 +1,18 @@
+.NearbyUser {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.avaPic {
+    width: 40px;
+    height: 400px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    margin-bottom: 30px;
+    /* position: relative;
+    left: 50%; */
+}
