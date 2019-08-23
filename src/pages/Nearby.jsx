@@ -30,21 +30,22 @@ class Nearby extends Component {
       }
 
     componentDidMount() {
-        this._isMounted = true;
+        // this._isMounted = true;
         axios.get(`${process.env.REACT_APP_API}/nearby`, {withCredentials:true})
         .then(responseFromApi => {
-            if (this._isMounted) {
+            // if (this._isMounted) {
                 let users= this.calculateUserDist(responseFromApi.data);
                 localStorage.setItem('nearbyUsers', JSON.stringify(users));
-                this.setState({sortedUsers:users});
-                this.props.history.push('/nearby');
-        }
+                setTimeout(()=>{
+                     this.setState({sortedUsers:users});
+                }, 500)
+        // }
     })
     }
 
-    componentWillUnmount() {
-        this._isMounted = false;
-      }
+    // componentWillUnmount() {
+    //     this._isMounted = false;
+    //   }
 
       calculateUserDist= (users)=> {
           debugger
@@ -70,9 +71,9 @@ class Nearby extends Component {
 
                         <div className="avaPic eachUser" style={{backgroundImage:`url(${user.profilePicUrl})` }}>
                             {/* <i className="fas fa-info-circle fa-2x"></i> */}
-                        <div>
-                            <h4>{user.username}</h4>
-                            <p><i className="fas fa-map-marker-alt"></i> {user.distance}km</p>
+                        <div className="nameDist">
+                            <h3 style={{margin:"0",color:"black"}}>{user.username}</h3>
+                            <p style={{fontSize:"20px", margin:"0"}}><i className="fas fa-map-marker-alt"></i> {user.distance}km</p>
                         </div>
                         </div>
                     </Link>

@@ -8,25 +8,25 @@ export default class AllRooms extends Component {
         super(props);
         this.state={
             user: JSON.parse(localStorage.getItem('user')),
-            otherUsers:{},
-            // currentRoom:this.props.currentRoom
+            otherUsers:JSON.parse(localStorage.getItem('nearbyUsers'))
         }
     }
 
-    componentDidMount(){
-            axios.get(`${process.env.REACT_APP_API}/nearby`,
-                         {withCredentials:true})
-            .then(response=>{
-                 this.setState({otherUsers:response.data})
-             })
-            .catch(err=>{
-            console.log(err)
-            })
-    }
+    // componentDidMount(){
+    //         axios.get(`${process.env.REACT_APP_API}/nearby`,
+    //                      {withCredentials:true})
+    //         .then(response=>{
+    //              this.setState({otherUsers:response.data})
+    //          })
+    //         .catch(err=>{
+    //         console.log(err)
+    //         })
+    // }
 
 
     render() {
         const {rooms} =this.props
+    
         if(this.state.otherUsers){
             let eachRoom= rooms.map((room, index)=>{
                         let roomName= room["member_user_ids"].filter(id => id !== this.state.user.username)[0]
@@ -40,6 +40,9 @@ export default class AllRooms extends Component {
                                 <div className="eachMesDiv" style={{backgroundImage: `url(${partner.profilePicUrl})`}}>
                                 </div>
                                 {roomName}
+                                {room.unread_count > 0 ? (
+                                    <span className="room-unread">{room.unread_count}</span>
+                                ): null}
                                 </div>
                             </li>
                             </Link>

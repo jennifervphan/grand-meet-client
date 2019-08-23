@@ -7,22 +7,23 @@ import "../components/commonRoom/GameBoard.css";
 class CommonRoom extends React.Component {
   constructor(props){
       super(props);
-      this.state = {};
+      this.state = {
+        user: JSON.parse(localStorage.getItem('user'))
+      };
   }
 
-   enterGame(username) {
-    this.setState({
-      username: username
-    });
-  }
+  //  enterGame(username) {
+  //   this.setState({
+  //   });
+  // }
 
   render() {
     let contents;
-    if (this.state.username) {
-      contents = <Games username={this.state.username} />
-    } else {
-      contents = <Login login={this.enterGame.bind(this)} />
-    }
+    // if (this.state.username) {
+      contents = <Games username={this.state.user.username} />
+    // } else {
+    //   contents = <Login login={this.enterGame.bind(this)} />
+    // }
     return (
       <>
         { contents }

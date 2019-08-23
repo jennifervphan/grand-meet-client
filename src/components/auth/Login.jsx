@@ -17,8 +17,11 @@ class Login extends Component {
     const password=this.state.password;
     this.service.login(username,password, {longitude: this.props.coords.longitude, latitude: this.props.coords.latitude})
     .then( response => {
-        this.setState({ username: "", password: ""});
-        // this.props.getUser();
+      console.log(response)
+        this.setState({ username: "", 
+                        password: "", 
+                        // message:response.data.message
+                      });
         this.props.history.push('/profile')
     })
     .catch( error => console.log(error) )
@@ -40,6 +43,10 @@ class Login extends Component {
       <Link to="/" style={{ textDecoration: 'none', color:"white" }}><i className="fas fa-times-circle fa-2x"></i></Link>
         <div className="loginForm">
         <h3>Log in</h3>
+        {/* {this.state.message?
+        (<p>{this.state.message}</p>)
+        :
+        (null)} */}
         <form className="loginInput" onSubmit={this.handleFormSubmit}>
           <label>Username:</label>
           <input type="text" name="username" value={this.state.username} onChange={ e => this.handleChange(e)}/>

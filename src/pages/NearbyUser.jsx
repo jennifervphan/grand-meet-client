@@ -60,7 +60,7 @@ export default class NearbyUser extends Component {
                         <div className="avaPic" style={{backgroundImage:`url(${this.state.user.profilePicUrl})` }}>
                         </div>
                         <h3>{this.state.user.username}</h3>
-                        <p><i className="fas fa-map-marker-alt"></i> {this.state.user.distance}km</p>
+                        <p style={{fontSize:"20px"}}><i className="fas fa-map-marker-alt"></i> {this.state.user.distance}km</p>
                         <hr/>
                         <p>{this.state.user.about}</p>
                         <Link to={{ pathname: `/chat/${this.state.user._id}`,

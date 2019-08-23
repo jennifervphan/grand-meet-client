@@ -10,7 +10,7 @@ export default class EachRoom extends Component {
         this.state={
             currentUser:null,
             userInSession: JSON.parse(localStorage.getItem('user')),
-            currentRoom: {users:[]},
+            currentRoom: null,
             messages:[],
             users:[]
         }
@@ -20,7 +20,7 @@ export default class EachRoom extends Component {
     componentDidUpdate(prevProps) {
         if(prevProps.match.params.id !== this.props.match.params.id) {
             const {params}= this.props.match;
-            let roomId=params.id
+            // let roomId=params.id
             const chatManager = new ChatManager({
                 instanceLocator: process.env.REACT_APP_chatkit_instance_locator,
                 userId: this.state.userInSession.username,
@@ -30,7 +30,18 @@ export default class EachRoom extends Component {
             })
     
             chatManager
-                    .connect()
+                    .connect({
+                        onRoomUpdated: room => {
+                            const { rooms } = this.props;
+                            const index = rooms.findIndex(r => r.id === room.id);
+                            rooms[index] = room;
+                            debugger
+                            console.log(rooms)
+                            this.setState({
+                              rooms,
+                            });
+                          }
+                    })
                     .then(currentUser => {
                         debugger
     
@@ -39,18 +50,25 @@ export default class EachRoom extends Component {
                             messages:[]
                         })
                         currentUser.subscribeToRoom({
-                            roomId: `${roomId}`,
+                            roomId: `${params.id}`,
                             messageLimit: 50,
                             hooks: {
                                 onMessage: message => {
                                     this.setState({
                                         messages: [...this.state.messages, message]
                                     })
+                                    const { currentRoom } = this.state;
+
+                                    if (currentRoom === null) return;
+
+                                    return currentUser.setReadCursor({
+                                        roomId: currentRoom.id,
+                                        position: message.id,
+                                    });
                                 },
                             }})
                             .then(currentRoom => {
                                 debugger
-                            console.log(currentRoom.userIds);
                             this.setState({
                                 currentRoom,
                                 users: currentRoom.userIds
@@ -66,7 +84,7 @@ export default class EachRoom extends Component {
     componentDidMount (){
         debugger
         const {params}= this.props.match;
-        let roomId=params.id
+        // let roomId=params.id
         const chatManager = new ChatManager({
             instanceLocator: process.env.REACT_APP_chatkit_instance_locator,
             userId: this.state.userInSession.username,
@@ -76,22 +94,40 @@ export default class EachRoom extends Component {
         })
 
         chatManager
-                .connect()
+                .connect({
+                    onRoomUpdated: room => {
+                        const { rooms } = this.state;
+                        const index = rooms.findIndex(r => r.id === room.id);
+                        rooms[index] = room;
+                        console.log("rooms on connect"+ rooms)
+                        this.setState({
+                          rooms,
+                        });
+                      }
+                })
                 .then(currentUser => {
-                    debugger
-
                     this.setState({
                         currentUser:currentUser,
                         message:[]
                     })
+
                     currentUser.subscribeToRoom({
-                        roomId: `${roomId}`,
+                        roomId: `${params.id}`,
                         messageLimit: 50,
                         hooks: {
                             onMessage: message => {
                                 this.setState({
                                     messages: [...this.state.messages, message]
                                 })
+
+                                const { currentRoom } = this.state;
+
+                                if (currentRoom === null) return;
+
+                                return currentUser.setReadCursor({
+                                    roomId: currentRoom.id,
+                                    position: message.id,
+                                });
                             },
                         }})
                         .then(currentRoom => {

@@ -22,7 +22,7 @@ export default class PostInput extends Component {
         const title = this.state.title;
         this.service.post('/post', {text, title})
         .then(response=>{
-            this.props.history.push('/share/thoughtsCorner')
+            this.props.history.push('/share/thoughtsCorner/allThoughts')
         })
         .catch(err =>{
             console.log(err)

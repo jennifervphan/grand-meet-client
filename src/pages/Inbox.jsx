@@ -11,7 +11,7 @@ export default class Inbox extends Component {
         super(props);
         this.state={
             chatRooms:[],
-            currentUser:{}, 
+            currentUser: JSON.parse(localStorage.getItem('user')), 
             currentRoom:{}
         };
         this.setCurrentRoom= this.setCurrentRoom.bind(this);
@@ -19,13 +19,11 @@ export default class Inbox extends Component {
 
     componentDidMount (){
         debugger
-        let user= this.props.getUser(); 
         axios.get(`${process.env.REACT_APP_API}/inbox`, 
                     {withCredentials:true})
         .then(response => {
-            console.log(response.data);
                 let chatRooms= response.data;
-                this.setState({chatRooms:chatRooms, currentUser: user})
+                this.setState({chatRooms:chatRooms})
     })
     }
 

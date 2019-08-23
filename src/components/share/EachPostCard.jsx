@@ -12,14 +12,13 @@ export default class EachPostCard extends Component {
                                 <div className="sharePic" style={{backgroundImage: `url(${post.author.profilePicUrl})`, marginRight:"10px"}}></div>
                                 <h4 className="postTitle">{post.title}</h4>
                             </div>
-                            <p style={{marginTop:"10px"}}>{post.short[0]}</p>
-                            <p>{post.short[1]}</p>
+                            <p style={{marginTop:"10px"}}>{post.short[0]} {post.short[1]}</p>
+                            {/* <p>{post.short[1]}</p> */}
                             <div className="footerDiv">
                                 <p><i class="far fa-clock"></i> {post.niceTime}</p>
                                 <Link to={{
-                                pathname:`/share/thoughtsCorner/${post._id}`
-                                }}>Read more
-                                </Link>
+                                pathname:`/share/thoughtsCorner/allThoughts/${post._id}`
+                                }}>Read more</Link>
                             </div>
                             
                         </div>
@@ -35,7 +34,7 @@ export default class EachPostCard extends Component {
                             <div className="footerDiv">
                                 <p><i class="far fa-clock"></i> {post.niceTime}</p>
                                 <Link to={{
-                                pathname:`/share/thoughtsCorner/${post._id}`
+                                pathname:`/share/thoughtsCorner/allThoughts/${post._id}`
                                 }}>Read more</Link>
                             </div>
                         </div>

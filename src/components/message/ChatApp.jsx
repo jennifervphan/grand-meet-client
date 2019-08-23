@@ -86,20 +86,20 @@ export default class ChatApp extends Component {
     }
 
     componentDidMount (){
-        debugger
+    
         axios.get(`${process.env.REACT_APP_API}/newChat`, 
         {withCredentials:true})
         .then(response => {
             let chatRooms= response.data;
-            debugger
+          
             let existRoom="";
             for (var i=0; i<chatRooms.length; i++){
                 let usersInRoom = chatRooms[i]["member_user_ids"]
                 for (var j=0; j<usersInRoom.length; j++){
-                    debugger
+                
                     if (usersInRoom[j]===this.state.chatPartner.username){
                         existRoom= chatRooms[i].id
-                        debugger
+    
                         break;
                     }
                 }
@@ -110,8 +110,6 @@ export default class ChatApp extends Component {
                 userId: this.props.userInSession.username,
                 tokenProvider: new TokenProvider({
                     url: `${process.env.REACT_APP_API}/authenticate`
-
-                    // url:`https://us1.pusherplatform.io/services/chatkit_token_provider/v1/95077b15-c43c-4d68-ae92-7a1f082f91c8/token`
                 })
                 })
                 debugger
@@ -120,6 +118,7 @@ export default class ChatApp extends Component {
                 chatManager
                     .connect()
                     .then(currentUser => {
+                        console.log(currentUser)
                         this.setState({
                             currentUser:currentUser
                         })
@@ -176,8 +175,6 @@ export default class ChatApp extends Component {
                             .catch(error => console.log(error))
             })})
          }
-                
-            // this.setState({chatRooms:chatRooms})
         })
     }
     

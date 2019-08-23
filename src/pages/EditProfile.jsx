@@ -7,13 +7,15 @@ export default class EditProfile extends Component {
     constructor(props){
         super(props);
         this.formRef = React.createRef();
-        this.state = {about: '', file: null };
+        this.state = {
+          about: '', 
+          file: null
+        };
       }
     
       handleFormSubmit = (event) => {
         event.preventDefault();
         const form = new FormData(this.formRef.current);
-        form.append('user',this.props.userInSession._id)
         axios({
             method:"POST",
             baseURL: `${process.env.REACT_APP_API}/edit`,

@@ -6,9 +6,10 @@ export default class ShareCorner extends Component {
     render() {
         return (
             <div className="allPosts">
-                <Link to="/share/shareYourThoughts"><button>Share your thougths</button></Link>
+                <Link style={{textDecoration:"none", color: "white"}} to="/share/shareYourThoughts">
+                    <button >Share your thougths</button> 
+                </Link>
                 <AllPosts {...this.props}/>
-
             </div>
         )
     }

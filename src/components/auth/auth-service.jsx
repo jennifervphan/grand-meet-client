@@ -28,12 +28,6 @@ class AuthService {
   }
   
   login = 
-  // (username,password) => {
-  //   return axios({
-  //     method:"POST",
-  //     baseURL: `http://localhost:5000/api/login`,
-  //     withCredentials: true,
-  //   })
   (username, password, coordinates) => {
     return this.service.post('/login', {username, password, coordinates})
     .then(response => {
@@ -45,15 +39,13 @@ class AuthService {
     localStorage.setItem('user', JSON.stringify(user));
 }
 
-// getUser(){
-//   return JSON.parse(localStorage.getItem('user'));
-// }
-
   logout = () => {
     return this.service.post('/logout', {})
     .then(() => {
       localStorage.removeItem('user');
       localStorage.removeItem('nearbyUsers');
+      localStorage.removeItem('chatRooms');
+      localStorage.removeItem('currentRoom');
 
     })
   }

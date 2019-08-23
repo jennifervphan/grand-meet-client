@@ -23,7 +23,8 @@ class Signup extends Component {
         this.setState({
             username: "", 
             password: "",
-            file: null
+            file: null,
+            // message:response.data.message
 
         });
         this.props.history.push('/profile')
@@ -51,6 +52,10 @@ class Signup extends Component {
       <Link to="/" style={{ textDecoration: 'none', color:"white" }}><i className="fas fa-times-circle fa-2x"></i></Link>
         <div className="signupForm">
         <h3>Register</h3>
+        {/* {this.state.message?
+        (<p>{this.state.message}</p>)
+        :
+        (null)} */}
         <form className="loginInput" ref={this.formRef} onSubmit={this.handleFormSubmit}>
           <label>Username:</label>
           <input type="text" name="username" value={this.state.username} onChange={ e => this.handleChange(e)}/>
