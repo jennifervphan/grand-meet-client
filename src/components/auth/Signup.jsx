@@ -20,6 +20,7 @@ class Signup extends Component {
 
     this.service.signup(form)
     .then(response => {
+      console.log(response)
         this.setState({
             username: "", 
             password: "",

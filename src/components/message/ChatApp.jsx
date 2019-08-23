@@ -112,9 +112,7 @@ export default class ChatApp extends Component {
                     url: `${process.env.REACT_APP_API}/authenticate`
                 })
                 })
-                debugger
             if (existRoom){
-                debugger
                 chatManager
                     .connect()
                     .then(currentUser => {

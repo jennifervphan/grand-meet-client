@@ -35,16 +35,13 @@ export default class EachRoom extends Component {
                             const { rooms } = this.props;
                             const index = rooms.findIndex(r => r.id === room.id);
                             rooms[index] = room;
-                            debugger
                             console.log(rooms)
                             this.setState({
                               rooms,
                             });
                           }
                     })
-                    .then(currentUser => {
-                        debugger
-    
+                    .then(currentUser => {    
                         this.setState({
                             currentUser:currentUser,
                             messages:[]
@@ -68,7 +65,6 @@ export default class EachRoom extends Component {
                                 },
                             }})
                             .then(currentRoom => {
-                                debugger
                             this.setState({
                                 currentRoom,
                                 users: currentRoom.userIds
@@ -82,9 +78,7 @@ export default class EachRoom extends Component {
     }
 
     componentDidMount (){
-        debugger
         const {params}= this.props.match;
-        // let roomId=params.id
         const chatManager = new ChatManager({
             instanceLocator: process.env.REACT_APP_chatkit_instance_locator,
             userId: this.state.userInSession.username,
@@ -131,7 +125,6 @@ export default class EachRoom extends Component {
                             },
                         }})
                         .then(currentRoom => {
-                            debugger
                         this.setState({
                             currentRoom,
                             users: currentRoom.userIds
@@ -150,7 +143,6 @@ export default class EachRoom extends Component {
     }
 
     render() {
-        debugger
         return (
             <div className="eachRoom"> 
                 <MessageList messages={this.state.messages} userInSession={this.state.userInSession}/>           

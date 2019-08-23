@@ -48,7 +48,6 @@ class Nearby extends Component {
     //   }
 
       calculateUserDist= (users)=> {
-          debugger
         let userLong= this.props.userInSession.longitude;
         let userLat= this.props.userInSession.latitude;
         for (var i = 0; i < users.length; i++) {
@@ -66,18 +65,15 @@ class Nearby extends Component {
         const users = this.state.sortedUsers;
         let eachUser=users.map(user=>{
             return(
-                // <div className="eachUser" key={user.username}>
                     <Link style={{textDecoration:"none"}} to={{ pathname: `/nearby/${user._id}`}}>
 
                         <div className="avaPic eachUser" style={{backgroundImage:`url(${user.profilePicUrl})` }}>
-                            {/* <i className="fas fa-info-circle fa-2x"></i> */}
                         <div className="nameDist">
                             <h3 style={{margin:"0",color:"black"}}>{user.username}</h3>
                             <p style={{fontSize:"20px", margin:"0"}}><i className="fas fa-map-marker-alt"></i> {user.distance}km</p>
                         </div>
                         </div>
                     </Link>
-                // </div>
             )
         })
         return (

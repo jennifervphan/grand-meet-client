@@ -11,10 +11,7 @@ export default class DeletePost extends Component {
             withCredentials:true
         })   
         .then(()=>{
-            debugger
             return <Redirect to="/share/thoughtsCorner/allThoughts"/>
-
-            // this.props.history.push('/share/thoughtsCorner/allThoughts')
         })
         .catch(err=>{
             console.log(err)

@@ -19,8 +19,7 @@ class Login extends Component {
     .then( response => {
       console.log(response)
         this.setState({ username: "", 
-                        password: "", 
-                        // message:response.data.message
+                        password: ""
                       });
         this.props.history.push('/profile')
     })
@@ -35,7 +34,6 @@ class Login extends Component {
   render(){
     return(
       <div className="loginPage">
-      {/* <MainLayout {...this.props}> */}
       <nav className="Navbar">
             <Link to="/" style={{textDecoration:"none", color: "white"}}><h3>grandMeet</h3></Link>
             <Link to='/login' style={{ textDecoration: 'none', color:"white"}}><h3>Login</h3></Link>
@@ -52,7 +50,7 @@ class Login extends Component {
           <input type="text" name="username" value={this.state.username} onChange={ e => this.handleChange(e)}/>
 
           <label>Password:</label>
-          <input type="text" name="password" value={this.state.password} onChange={ e => this.handleChange(e)} />
+          <input type="password" name="password" value={this.state.password} onChange={ e => this.handleChange(e)} />
           
           <button className="submitBtn" type="submit">Log in</button>
         </form>
@@ -60,7 +58,6 @@ class Login extends Component {
         <Link to={"/signup"} style={{ color: 'rgb(5, 5, 5)', textDecoration:"underline" }}> Register</Link>
         </p>
         </div>
-      {/* </MainLayout> */}
       </div>
     )
   }

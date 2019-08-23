@@ -18,7 +18,6 @@ export default class Inbox extends Component {
     }
 
     componentDidMount (){
-        debugger
         axios.get(`${process.env.REACT_APP_API}/inbox`, 
                     {withCredentials:true})
         .then(response => {

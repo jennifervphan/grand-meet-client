@@ -7,7 +7,6 @@ import axios from 'axios';
 export default class Games extends React.Component {
     constructor(props) {
         super(props);
-        debugger
         this.state = {
         joined: [],
         joinable: []
@@ -72,7 +71,6 @@ export default class Games extends React.Component {
     }
     
     _enterRoom(id) {
-        debugger
         const { currentUser } = this.state;
         currentUser.joinRoom({ roomId: id })
             .then(() => {

@@ -20,7 +20,6 @@ export default class AllPosts extends Component {
         .then(response=>{
             let changePost = response.data;
             let now = new Date();
-            debugger
             let eachchangePost= changePost.map(post=>{
                 if (post.text[0].length > 100) {
                 post.short = []

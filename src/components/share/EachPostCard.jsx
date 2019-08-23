@@ -13,7 +13,6 @@ export default class EachPostCard extends Component {
                                 <h4 className="postTitle">{post.title}</h4>
                             </div>
                             <p style={{marginTop:"10px"}}>{post.short[0]} {post.short[1]}</p>
-                            {/* <p>{post.short[1]}</p> */}
                             <div className="footerDiv">
                                 <p><i class="far fa-clock"></i> {post.niceTime}</p>
                                 <Link to={{
